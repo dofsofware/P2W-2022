@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221105051250",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "play",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Play",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}
