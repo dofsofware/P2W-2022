@@ -51,6 +51,12 @@ public class CacheConfiguration {
             createCache(cm, play2win.techxel.com.domain.User.class.getName());
             createCache(cm, play2win.techxel.com.domain.Authority.class.getName());
             createCache(cm, play2win.techxel.com.domain.User.class.getName() + ".authorities");
+            createCache(cm, play2win.techxel.com.domain.Abonne.class.getName());
+            createCache(cm, play2win.techxel.com.domain.Abonne.class.getName() + ".gains");
+            createCache(cm, play2win.techxel.com.domain.Gains.class.getName());
+            createCache(cm, play2win.techxel.com.domain.Gains.class.getName() + ".abonnes");
+            createCache(cm, play2win.techxel.com.domain.Question.class.getName());
+            createCache(cm, play2win.techxel.com.domain.Recette.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

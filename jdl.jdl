@@ -1,3 +1,44 @@
+entity Authentification {
+}
+
+entity Choix {
+}
+
+entity InfosAbonne {
+}
+
+entity Incription {
+}
+
+entity MotDePasseSetting {
+}
+
+entity Play {
+}
+
+entity Presentation {
+}
+
+entity Principes {
+}
+
+entity Profil {
+}
+
+entity Profil {
+}
+
+entity Reponse {
+}
+
+entity Restaure {
+}
+
+entity Resultat {
+}
+
+entity SaisieCode {
+}
 entity Abonne {
 	identifiant String required unique minlength(4) maxlength(20),
     telephone String required unique minlength(12) maxlength(12),

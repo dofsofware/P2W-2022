@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="abonne">
+      <h2 data-cy="abonneDetailsHeading"><span jhiTranslate="play2WinApp.abonne.detail.title">Abonne</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ abonne.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.identifiant">Identifiant</span></dt>
+        <dd>
+          <span>{{ abonne.identifiant }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ abonne.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.motDePasse">Mot De Passe</span></dt>
+        <dd>
+          <span>{{ abonne.motDePasse }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.score">Score</span></dt>
+        <dd>
+          <span>{{ abonne.score }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.niveau">Niveau</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'play2WinApp.Niveau.' + abonne.niveau }}">{{ abonne.niveau }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.createdAt">Created At</span></dt>
+        <dd>
+          <span>{{ abonne.createdAt | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.dernierePaticipation">Derniere Paticipation</span></dt>
+        <dd>
+          <span>{{ abonne.dernierePaticipation | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.actif">Actif</span></dt>
+        <dd>
+          <span>{{ abonne.actif }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.codeRactivation">Code Ractivation</span></dt>
+        <dd>
+          <span>{{ abonne.codeRactivation }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinApp.abonne.gains">Gains</span></dt>
+        <dd>
+          <span *ngFor="let gains of abonne.gains; let last = last">
+            <a [routerLink]="['/gains', gains?.id, 'view']">{{ gains.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/abonne', abonne.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
