@@ -1,6 +1,9 @@
 entity Authentification {
 }
 
+entity CommentJouer {
+}
+
 entity Choix {
 }
 
@@ -22,8 +25,6 @@ entity Presentation {
 entity Principes {
 }
 
-entity Profil {
-}
 
 entity Profil {
 }

@@ -370,3 +370,153 @@
     </div>
   </div>
 </nav>
+
+<!-- nav bar -->
+<div [ngSwitch]="isPlaying()">
+  <section *ngSwitchCase="false" class="text-center">
+    <a href="index.html"><img class="img-fluid tada animated" src="../../../content/assets/img/logo.png" width="500px" /></a>
+  </section>
+  <nav
+    *ngSwitchCase="false"
+    class="navbar navbar-light navbar-expand-xl sticky-top text-center navigation-clean-button"
+    style="padding: 0; background-color: #f9320c; font-family: Montserrat, sans-serif; font-weight: bold"
+  >
+    <div class="container-fluid">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="font-weight: bold"></a
+        ><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+          <span class="sr-only">Toggle navigation</span><i class="fa fa-bars" style="color: aliceblue !important"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" role="button" routerLink="/presentation"
+                >Présentation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" role="button" routerLink="/comment-jouer"
+                >Comment jouer</a
+              >
+            </li>
+            <!-- <li class="nav-item"><a class="nav-link " href="#" data-toggle="collapse"
+                              data-target=".navbar-collapse.show">FAQs</a></li> -->
+            <li class="nav-item"><a id="ribranDownload" class="nav-link add-button ribranDownload">Télécharger Play2win</a></li>
+          </ul>
+          <div [ngSwitch]="isConnected()">
+            <div *ngSwitchCase="false">
+              <span class="text-right navbar-text actions">
+                <a
+                  class="login"
+                  style="font-weight: bold; font-family: Montserrat, sans-serif; color: rgb(255, 255, 255)"
+                  routerLink="/authentification"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                  >S'authentifier</a
+                >
+              </span>
+              <span class="navbar-text actions">
+                <a
+                  class="btn btn-primary btn-lg action-button"
+                  role="button"
+                  routerLink="/inscription"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  style="background-color: #004e66; font-family: Montserrat, sans-serif; font-weight: bold"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                  >S'inscrire</a
+                >
+              </span>
+            </div>
+            <div *ngSwitchCase="true">
+              <span class="text-right navbar-text actions">
+                <!-- <a class="login"
+                                  style="font-weight: bold;font-family: Montserrat, sans-serif;color: rgb(255,255,255);"
+                                  routerLink="/profil" routerLinkActive="active"
+                                  [routerLinkActiveOptions]="{ exact: true }" data-toggle="collapse"
+                                  data-target=".navbar-collapse.show">Profil</a> -->
+                <div class="dropdown">
+                  <a
+                    class="btn"
+                    data-toggle="dropdown"
+                    aria-expanded="true"
+                    href="#"
+                    style="font-weight: bold; font-family: Montserrat, sans-serif; color: rgb(255, 255, 255)"
+                    >Mon compte</a
+                  >
+                  <div id="mysubmenu" class="dropdown-menu" role="menu">
+                    <a
+                      class="dropdown-item"
+                      role="presentation"
+                      routerLink="/profil"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse.show"
+                      ><i class="fas fa-user"></i> &nbsp;Profil</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      role="presentation"
+                      routerLink="/mot-de-passe-setting"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse.show"
+                      ><i class="fas fa-lock"></i>&nbsp; Mot de passe</a
+                    >
+                    <a
+                      class="dropdown-item bounceInfini bounce-2"
+                      style="background-color: #004e66"
+                      role="presentation"
+                      routerLink="/choix"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse.show"
+                      ><i class="fas fa-gamepad"></i>&nbsp; Jouer</a
+                    >
+                    <!-- <a class="dropdown-item" role="presentation"
+                                          href="#"><i class="fas fa-cog"></i>&nbsp; Paramètres</a> -->
+                    <hr style="color: aliceblue; margin: 0px; padding: 0px" />
+                    <a
+                      class="dropdown-item"
+                      role="presentation"
+                      (click)="deconnexion()"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse.show"
+                      ><i class="fas fa-sign-out-alt"></i>&nbsp; Déconnexion</a
+                    >
+                  </div>
+                </div>
+              </span>
+              <span class="navbar-text actions"> </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- ribranDownload -->
+<!-- 
+<div style="background-color: #e1eef6;">
+  <div class="container ribranDownload navigation-clean-button" style="padding: 0;background-color: #e1eef6;font-family: Montserrat, sans-serif;font-weight: bold;">
+      <div class="row">
+          <div class="col-sm-8">
+              <p> facilitez vous la vie téléchargez votre application Play2win.</p>
+          </div>
+          <div class="col-sm-4">
+              <a class="btn btn-primary md-2 add-button" role="button"
+                  style="background-color: #004e66; color: #fff; border-radius:15px; font-family: Montserrat, sans-serif;font-weight: bold;">Télécharger</a>
+
+          </div>
+      </div>
+  </div>
+</div> -->

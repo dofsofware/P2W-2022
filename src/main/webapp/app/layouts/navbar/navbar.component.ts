@@ -10,6 +10,7 @@ import { AccountService } from 'app/core/auth/account.service';
 import { LoginService } from 'app/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
 import { EntityNavbarItems } from 'app/entities/entity-navbar-items';
+import { GlobalPartageService } from 'app/global-partage.service';
 
 @Component({
   selector: 'jhi-navbar',
@@ -31,7 +32,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     private sessionStorageService: SessionStorageService,
     private accountService: AccountService,
     private profileService: ProfileService,
-    private router: Router
+    private router: Router,
+    private globalPartageService: GlobalPartageService
   ) {
     if (VERSION) {
       this.version = VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`;
@@ -53,17 +55,22 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     });
   }
 
-  changeLanguage(languageKey: string): void {
-    this.sessionStorageService.store('locale', languageKey);
-    this.translateService.use(languageKey);
+  isPlaying(): boolean {
+    if (this.router.url === '/play') {
+      return true;
+    } else if (this.router.url === '/principes') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  collapseNavbar(): void {
-    this.isNavbarCollapsed = true;
+  isAuthenticated(): boolean {
+    return this.accountService.isAuthenticated();
   }
 
   login(): void {
-    this.router.navigate(['/login']);
+    // this.loginModalService.open();
   }
 
   logout(): void {
@@ -74,6 +81,22 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  isConnected(): boolean {
+    return this.globalPartageService.getIsAuth();
+  }
+  deconnexion(): void {
+    this.globalPartageService.deconnexion();
+  }
+
+  changeLanguage(languageKey: string): void {
+    this.sessionStorageService.store('locale', languageKey);
+    this.translateService.use(languageKey);
+  }
+
+  collapseNavbar(): void {
+    this.isNavbarCollapsed = true;
   }
 
   butonInstall(): void {
