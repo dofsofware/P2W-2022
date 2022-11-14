@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component';
+import { PresentationComponent } from 'app/presentation/presentation.component';
 
 @NgModule({
   imports: [
@@ -10,7 +11,7 @@ import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component
         data: { pageTitle: 'play2WinApp.abonne.home.title' },
         loadChildren: () => import('./abonne/abonne.module').then(m => m.AbonneModule),
       },
-
+      { path: 'presentation', component: PresentationComponent },
       { path: 'comment-jouer', component: CommentJouerComponent },
       {
         path: 'gains',
@@ -56,11 +57,6 @@ import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component
         path: 'play',
         data: { pageTitle: 'play2WinApp.play.home.title' },
         loadChildren: () => import('./play/play.module').then(m => m.PlayModule),
-      },
-      {
-        path: 'presentation',
-        data: { pageTitle: 'play2WinApp.presentation.home.title' },
-        loadChildren: () => import('./presentation/presentation.module').then(m => m.PresentationModule),
       },
       {
         path: 'principes',

@@ -26,6 +26,7 @@ import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import { CommentJouerComponent } from './comment-jouer/comment-jouer.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 @NgModule({
   imports: [
@@ -54,6 +55,7 @@ import { CommentJouerComponent } from './comment-jouer/comment-jouer.component';
     ActiveMenuDirective,
     FooterComponent,
     CommentJouerComponent,
+    PresentationComponent,
   ],
   bootstrap: [MainComponent],
 })
