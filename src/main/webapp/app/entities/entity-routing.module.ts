@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component';
 
 @NgModule({
   imports: [
@@ -9,6 +10,8 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'play2WinApp.abonne.home.title' },
         loadChildren: () => import('./abonne/abonne.module').then(m => m.AbonneModule),
       },
+
+      { path: 'comment-jouer', component: CommentJouerComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
