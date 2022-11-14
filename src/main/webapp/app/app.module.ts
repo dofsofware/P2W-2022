@@ -27,6 +27,7 @@ import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import { CommentJouerComponent } from './comment-jouer/comment-jouer.component';
 import { PresentationComponent } from './presentation/presentation.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
 
 @NgModule({
   imports: [
@@ -56,6 +57,7 @@ import { PresentationComponent } from './presentation/presentation.component';
     FooterComponent,
     CommentJouerComponent,
     PresentationComponent,
+    AuthentificationComponent,
   ],
   bootstrap: [MainComponent],
 })

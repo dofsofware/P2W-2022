@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LoginService } from 'app/login/login.service';
 import { AbonneService } from 'app/entities/abonne/service/abonne.service';
 import { IAbonne } from 'app/entities/abonne/abonne.model';
+import * as bcrypt from 'bcryptjs';
 type EntityResponseTypeAbonne = HttpResponse<IAbonne>;
 
 @Injectable({
@@ -179,9 +180,12 @@ export class GlobalPartageService {
     return motdepasse;
   }
   // @typescript-eslint/no-unused-vars motdepasse: string, hash: string
-  CompareHash(): boolean {
-    // return bcrypt.compareSync(motdepasse, hash);
-    return true;
+  // CompareHash(): boolean {
+  //   // return bcrypt.compareSync(motdepasse, hash);
+  //   return true;
+  // }
+  CompareHash(motdepasse: string, hash: string): boolean {
+    return bcrypt.compareSync(motdepasse, hash);
   }
   getRang(): void {
     this.abonnes = [];

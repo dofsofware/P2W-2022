@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthentificationComponent } from 'app/authentification/authentification.component';
 import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component';
 import { PresentationComponent } from 'app/presentation/presentation.component';
 
@@ -13,6 +14,7 @@ import { PresentationComponent } from 'app/presentation/presentation.component';
       },
       { path: 'presentation', component: PresentationComponent },
       { path: 'comment-jouer', component: CommentJouerComponent },
+      { path: 'authentification', component: AuthentificationComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -27,11 +29,6 @@ import { PresentationComponent } from 'app/presentation/presentation.component';
         path: 'recette',
         data: { pageTitle: 'play2WinApp.recette.home.title' },
         loadChildren: () => import('./recette/recette.module').then(m => m.RecetteModule),
-      },
-      {
-        path: 'authentification',
-        data: { pageTitle: 'play2WinApp.authentification.home.title' },
-        loadChildren: () => import('./authentification/authentification.module').then(m => m.AuthentificationModule),
       },
       {
         path: 'choix',
