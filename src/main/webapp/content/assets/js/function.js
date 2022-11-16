@@ -1,6 +1,6 @@
 // Code By Webdevtrick ( https://webdevtrick.com )
 function timeLeft(endtime) {
-  var t = Date.parse('2021-10-01T00:00:00.000+00:00') - Date.parse(new Date());
+  var t = Date.parse('2024-10-01T00:00:00.000+00:00') - Date.parse(new Date());
   var seconds = Math.floor((t / 1000) % 60);
   var minutes = Math.floor((t / 1000 / 60) % 60);
   var hours = Math.floor((t / (1000 * 60 * 60)) % 24);

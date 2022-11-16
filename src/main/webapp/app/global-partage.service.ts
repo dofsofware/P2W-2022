@@ -65,7 +65,7 @@ export class GlobalPartageService {
   //
   encryptData(data: any): any {
     try {
-      return data; // CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptSecretKey).toString();
+      return CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptSecretKey).toString();
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log(e);
@@ -156,10 +156,9 @@ export class GlobalPartageService {
     this.abonneEncore = abonne;
     this.expiredDate = new Date();
     this.expiredDate.setDate(this.expiredDate.getDate() + 7);
-
     this.cookieService.set(
       'auth',
-      `${String(this.encryptData(abonne?.id))} ${this.separateur} ${String(this.encryptData(abonne?.telephone))}`,
+      `${String(this.encryptData(abonne?.id))}${this.separateur}${String(this.encryptData(abonne?.telephone))}`,
       this.expiredDate
     );
     localStorage.setItem('_fir', this.encryptData(abonne?.motDePasse));

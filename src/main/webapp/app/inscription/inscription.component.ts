@@ -115,7 +115,7 @@ export class InscriptionComponent implements OnInit {
         size: this.itemsPerPage,
         sort: this.sortAbonne(),
       })
-      .subscribe((res: HttpResponse<IAbonne[]>) => this.paginateAbonnes(res.body, res.headers));
+      .subscribe(res => (this.abonnes = res.body!));
   }
 
   updateForm(abonne: IAbonne): void {
@@ -245,15 +245,15 @@ export class InscriptionComponent implements OnInit {
     return option;
   }
 
-  paginateAbonnes(data: IAbonne[] | null, headers: HttpHeaders): void {
-    const headersLink = headers.get('link');
-    // this.links = this.parseLinks.parse(headersLink ? headersLink : '');
-    if (data) {
-      for (let i = 0; i < data.length; i++) {
-        this.abonnes.push(data[i]);
-      }
-    }
-  }
+  // paginateAbonnes(data: IAbonne[] | null, headers: HttpHeaders): void {
+  //   // const headersLink = headers.get('link');
+  //   // this.links = this.parseLinks.parse(headersLink ? headersLink : '');
+  //   if (data) {
+  //     for (let i = 0; i < data.length; i++) {
+  //       this.abonnes.push(data[i]);
+  //     }
+  //   }
+  // }
 
   telephoneValidator(control: AbstractControl): { [key: string]: any } | null {
     const NumTel: string = control.value;

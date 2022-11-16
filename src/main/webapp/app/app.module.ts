@@ -29,6 +29,7 @@ import { CommentJouerComponent } from './comment-jouer/comment-jouer.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   imports: [
@@ -60,6 +61,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     PresentationComponent,
     AuthentificationComponent,
     InscriptionComponent,
+    ProfilComponent,
   ],
   bootstrap: [MainComponent],
 })

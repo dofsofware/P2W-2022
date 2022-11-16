@@ -4,6 +4,7 @@ import { AuthentificationComponent } from 'app/authentification/authentification
 import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component';
 import { InscriptionComponent } from 'app/inscription/inscription.component';
 import { PresentationComponent } from 'app/presentation/presentation.component';
+import { ProfilComponent } from 'app/profil/profil.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { PresentationComponent } from 'app/presentation/presentation.component';
       { path: 'comment-jouer', component: CommentJouerComponent },
       { path: 'authentification', component: AuthentificationComponent },
       { path: 'inscription', component: InscriptionComponent },
+      { path: 'profil', component: ProfilComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -56,11 +58,6 @@ import { PresentationComponent } from 'app/presentation/presentation.component';
         path: 'principes',
         data: { pageTitle: 'play2WinApp.principes.home.title' },
         loadChildren: () => import('./principes/principes.module').then(m => m.PrincipesModule),
-      },
-      {
-        path: 'profil',
-        data: { pageTitle: 'play2WinApp.profil.home.title' },
-        loadChildren: () => import('./profil/profil.module').then(m => m.ProfilModule),
       },
       {
         path: 'reponse',
