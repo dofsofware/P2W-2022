@@ -30,6 +30,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ProfilComponent } from './profil/profil.component';
+import { SaisieCodeComponent } from './saisie-code/saisie-code.component';
 
 @NgModule({
   imports: [
@@ -62,6 +63,7 @@ import { ProfilComponent } from './profil/profil.component';
     AuthentificationComponent,
     InscriptionComponent,
     ProfilComponent,
+    SaisieCodeComponent,
   ],
   bootstrap: [MainComponent],
 })

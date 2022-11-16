@@ -5,6 +5,7 @@ import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component
 import { InscriptionComponent } from 'app/inscription/inscription.component';
 import { PresentationComponent } from 'app/presentation/presentation.component';
 import { ProfilComponent } from 'app/profil/profil.component';
+import { SaisieCodeComponent } from 'app/saisie-code/saisie-code.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ProfilComponent } from 'app/profil/profil.component';
       { path: 'authentification', component: AuthentificationComponent },
       { path: 'inscription', component: InscriptionComponent },
       { path: 'profil', component: ProfilComponent },
+      { path: 'saisie-code', component: SaisieCodeComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -73,11 +75,6 @@ import { ProfilComponent } from 'app/profil/profil.component';
         path: 'resultat',
         data: { pageTitle: 'play2WinApp.resultat.home.title' },
         loadChildren: () => import('./resultat/resultat.module').then(m => m.ResultatModule),
-      },
-      {
-        path: 'saisie-code',
-        data: { pageTitle: 'play2WinApp.saisieCode.home.title' },
-        loadChildren: () => import('./saisie-code/saisie-code.module').then(m => m.SaisieCodeModule),
       },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
