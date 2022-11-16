@@ -31,6 +31,7 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ProfilComponent } from './profil/profil.component';
 import { SaisieCodeComponent } from './saisie-code/saisie-code.component';
+import { PrincipesComponent } from './principes/principes.component';
 
 @NgModule({
   imports: [
@@ -64,6 +65,7 @@ import { SaisieCodeComponent } from './saisie-code/saisie-code.component';
     InscriptionComponent,
     ProfilComponent,
     SaisieCodeComponent,
+    PrincipesComponent,
   ],
   bootstrap: [MainComponent],
 })

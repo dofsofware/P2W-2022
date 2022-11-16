@@ -23,7 +23,6 @@
     <include file="config/liquibase/changelog/20221105051247_added_entity_InfosAbonne.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051249_added_entity_MotDePasseSetting.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051250_added_entity_Play.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20221105051252_added_entity_Principes.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051254_added_entity_Reponse.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051255_added_entity_Restaure.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051256_added_entity_Resultat.xml" relativeToChangelogFile="false"/>

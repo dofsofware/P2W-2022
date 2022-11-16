@@ -6,6 +6,7 @@ import { InscriptionComponent } from 'app/inscription/inscription.component';
 import { PresentationComponent } from 'app/presentation/presentation.component';
 import { ProfilComponent } from 'app/profil/profil.component';
 import { SaisieCodeComponent } from 'app/saisie-code/saisie-code.component';
+import { PrincipesComponent } from 'app/principes/principes.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { SaisieCodeComponent } from 'app/saisie-code/saisie-code.component';
       { path: 'inscription', component: InscriptionComponent },
       { path: 'profil', component: ProfilComponent },
       { path: 'saisie-code', component: SaisieCodeComponent },
+      { path: 'principes', component: PrincipesComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -55,11 +57,6 @@ import { SaisieCodeComponent } from 'app/saisie-code/saisie-code.component';
         path: 'play',
         data: { pageTitle: 'play2WinApp.play.home.title' },
         loadChildren: () => import('./play/play.module').then(m => m.PlayModule),
-      },
-      {
-        path: 'principes',
-        data: { pageTitle: 'play2WinApp.principes.home.title' },
-        loadChildren: () => import('./principes/principes.module').then(m => m.PrincipesModule),
       },
       {
         path: 'reponse',
