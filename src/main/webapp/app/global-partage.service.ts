@@ -7,6 +7,8 @@ import { LoginService } from 'app/login/login.service';
 import { AbonneService } from 'app/entities/abonne/service/abonne.service';
 import { IAbonne } from 'app/entities/abonne/abonne.model';
 import * as bcrypt from 'bcryptjs';
+import CryptoJS from 'crypto-js';
+
 type EntityResponseTypeAbonne = HttpResponse<IAbonne>;
 
 @Injectable({
@@ -71,9 +73,9 @@ export class GlobalPartageService {
   }
   decryptData(data: any): any {
     try {
-      const bytes = ''; // CryptoJS.AES.decrypt(data, this.encryptSecretKey);
+      const bytes = CryptoJS.AES.decrypt(data, this.encryptSecretKey);
       if (bytes.toString()) {
-        return ''; // JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
       }
       return data;
     } catch (e) {
@@ -174,19 +176,15 @@ export class GlobalPartageService {
   }
 
   bcryter(motdepasse: string): string {
-    // this.salt = bcrypt.genSaltSync(10);
-    // this.hash = bcrypt.hashSync(motdepasse, this.salt);
-    // return this.hash;
-    return motdepasse;
+    this.salt = bcrypt.genSaltSync(10);
+    this.hash = bcrypt.hashSync(motdepasse, this.salt);
+    return this.hash;
   }
-  // @typescript-eslint/no-unused-vars motdepasse: string, hash: string
-  // CompareHash(): boolean {
-  //   // return bcrypt.compareSync(motdepasse, hash);
-  //   return true;
-  // }
+
   CompareHash(motdepasse: string, hash: string): boolean {
     return bcrypt.compareSync(motdepasse, hash);
   }
+
   getRang(): void {
     this.abonnes = [];
     this.abonneService.query().subscribe((res: HttpResponse<IAbonne[]>) => {
@@ -205,6 +203,7 @@ export class GlobalPartageService {
       this.MonRang = this.abonnes.findIndex(a => a.id === idencore) + 1;
     });
   }
+
   push10premier(): void {
     this.les10premiers = [];
     this.abonnes = [];

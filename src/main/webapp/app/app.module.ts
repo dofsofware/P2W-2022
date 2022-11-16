@@ -28,6 +28,7 @@ import { ErrorComponent } from './layouts/error/error.component';
 import { CommentJouerComponent } from './comment-jouer/comment-jouer.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 @NgModule({
   imports: [
@@ -58,6 +59,7 @@ import { AuthentificationComponent } from './authentification/authentification.c
     CommentJouerComponent,
     PresentationComponent,
     AuthentificationComponent,
+    InscriptionComponent,
   ],
   bootstrap: [MainComponent],
 })

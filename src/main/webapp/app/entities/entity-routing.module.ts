@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthentificationComponent } from 'app/authentification/authentification.component';
 import { CommentJouerComponent } from 'app/comment-jouer/comment-jouer.component';
+import { InscriptionComponent } from 'app/inscription/inscription.component';
 import { PresentationComponent } from 'app/presentation/presentation.component';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { PresentationComponent } from 'app/presentation/presentation.component';
       { path: 'presentation', component: PresentationComponent },
       { path: 'comment-jouer', component: CommentJouerComponent },
       { path: 'authentification', component: AuthentificationComponent },
+      { path: 'inscription', component: InscriptionComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -39,11 +41,6 @@ import { PresentationComponent } from 'app/presentation/presentation.component';
         path: 'infos-abonne',
         data: { pageTitle: 'play2WinApp.infosAbonne.home.title' },
         loadChildren: () => import('./infos-abonne/infos-abonne.module').then(m => m.InfosAbonneModule),
-      },
-      {
-        path: 'incription',
-        data: { pageTitle: 'play2WinApp.incription.home.title' },
-        loadChildren: () => import('./incription/incription.module').then(m => m.IncriptionModule),
       },
       {
         path: 'mot-de-passe-setting',
