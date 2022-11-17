@@ -32,6 +32,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ProfilComponent } from './profil/profil.component';
 import { SaisieCodeComponent } from './saisie-code/saisie-code.component';
 import { PrincipesComponent } from './principes/principes.component';
+import { ChoixComponent } from './choix/choix.component';
+import { PlayComponent } from './play/play.component';
 
 @NgModule({
   imports: [
@@ -66,6 +68,8 @@ import { PrincipesComponent } from './principes/principes.component';
     ProfilComponent,
     SaisieCodeComponent,
     PrincipesComponent,
+    ChoixComponent,
+    PlayComponent,
   ],
   bootstrap: [MainComponent],
 })

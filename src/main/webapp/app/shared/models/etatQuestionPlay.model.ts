@@ -1,0 +1,7 @@
+export const enum EtatQuestionPlay {
+  SANSREPONSE = 'SANSREPONSE',
+
+  REPONSEVRAIS = 'REPONSEVRAIS',
+
+  REPONSEFAUSSE = 'REPONSEFAUSSE',
+}

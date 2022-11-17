@@ -7,6 +7,8 @@ import { PresentationComponent } from 'app/presentation/presentation.component';
 import { ProfilComponent } from 'app/profil/profil.component';
 import { SaisieCodeComponent } from 'app/saisie-code/saisie-code.component';
 import { PrincipesComponent } from 'app/principes/principes.component';
+import { ChoixComponent } from 'app/choix/choix.component';
+import { PlayComponent } from 'app/play/play.component';
 
 @NgModule({
   imports: [
@@ -23,6 +25,8 @@ import { PrincipesComponent } from 'app/principes/principes.component';
       { path: 'profil', component: ProfilComponent },
       { path: 'saisie-code', component: SaisieCodeComponent },
       { path: 'principes', component: PrincipesComponent },
+      { path: 'choix', component: ChoixComponent },
+      { path: 'play', component: PlayComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -39,11 +43,6 @@ import { PrincipesComponent } from 'app/principes/principes.component';
         loadChildren: () => import('./recette/recette.module').then(m => m.RecetteModule),
       },
       {
-        path: 'choix',
-        data: { pageTitle: 'play2WinApp.choix.home.title' },
-        loadChildren: () => import('./choix/choix.module').then(m => m.ChoixModule),
-      },
-      {
         path: 'infos-abonne',
         data: { pageTitle: 'play2WinApp.infosAbonne.home.title' },
         loadChildren: () => import('./infos-abonne/infos-abonne.module').then(m => m.InfosAbonneModule),
@@ -52,11 +51,6 @@ import { PrincipesComponent } from 'app/principes/principes.component';
         path: 'mot-de-passe-setting',
         data: { pageTitle: 'play2WinApp.motDePasseSetting.home.title' },
         loadChildren: () => import('./mot-de-passe-setting/mot-de-passe-setting.module').then(m => m.MotDePasseSettingModule),
-      },
-      {
-        path: 'play',
-        data: { pageTitle: 'play2WinApp.play.home.title' },
-        loadChildren: () => import('./play/play.module').then(m => m.PlayModule),
       },
       {
         path: 'reponse',
