@@ -24,7 +24,6 @@
     <include file="config/liquibase/changelog/20221105051249_added_entity_MotDePasseSetting.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051254_added_entity_Reponse.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051255_added_entity_Restaure.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20221105051256_added_entity_Resultat.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20221103162618_added_entity_constraints_Abonne.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->

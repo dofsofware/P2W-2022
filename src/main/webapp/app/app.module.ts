@@ -34,6 +34,7 @@ import { SaisieCodeComponent } from './saisie-code/saisie-code.component';
 import { PrincipesComponent } from './principes/principes.component';
 import { ChoixComponent } from './choix/choix.component';
 import { PlayComponent } from './play/play.component';
+import { ResultatComponent } from './resultat/resultat.component';
 
 @NgModule({
   imports: [
@@ -70,6 +71,7 @@ import { PlayComponent } from './play/play.component';
     PrincipesComponent,
     ChoixComponent,
     PlayComponent,
+    ResultatComponent,
   ],
   bootstrap: [MainComponent],
 })

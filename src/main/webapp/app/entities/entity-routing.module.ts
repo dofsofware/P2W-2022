@@ -9,6 +9,7 @@ import { SaisieCodeComponent } from 'app/saisie-code/saisie-code.component';
 import { PrincipesComponent } from 'app/principes/principes.component';
 import { ChoixComponent } from 'app/choix/choix.component';
 import { PlayComponent } from 'app/play/play.component';
+import { ResultatComponent } from 'app/resultat/resultat.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { PlayComponent } from 'app/play/play.component';
       { path: 'principes', component: PrincipesComponent },
       { path: 'choix', component: ChoixComponent },
       { path: 'play', component: PlayComponent },
+      { path: 'resultat', component: ResultatComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -61,11 +63,6 @@ import { PlayComponent } from 'app/play/play.component';
         path: 'restaure',
         data: { pageTitle: 'play2WinApp.restaure.home.title' },
         loadChildren: () => import('./restaure/restaure.module').then(m => m.RestaureModule),
-      },
-      {
-        path: 'resultat',
-        data: { pageTitle: 'play2WinApp.resultat.home.title' },
-        loadChildren: () => import('./resultat/resultat.module').then(m => m.ResultatModule),
       },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
