@@ -58,7 +58,6 @@ public class CacheConfiguration {
             createCache(cm, play2win.techxel.com.domain.Question.class.getName());
             createCache(cm, play2win.techxel.com.domain.Recette.class.getName());
             createCache(cm, play2win.techxel.com.domain.InfosAbonne.class.getName());
-            createCache(cm, play2win.techxel.com.domain.MotDePasseSetting.class.getName());
             createCache(cm, play2win.techxel.com.domain.Reponse.class.getName());
             createCache(cm, play2win.techxel.com.domain.Restaure.class.getName());
             // jhipster-needle-ehcache-add-entry

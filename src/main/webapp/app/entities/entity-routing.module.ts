@@ -10,6 +10,7 @@ import { PrincipesComponent } from 'app/principes/principes.component';
 import { ChoixComponent } from 'app/choix/choix.component';
 import { PlayComponent } from 'app/play/play.component';
 import { ResultatComponent } from 'app/resultat/resultat.component';
+import { MotDePasseSettingComponent } from 'app/mot-de-passe-setting/mot-de-passe-setting.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { ResultatComponent } from 'app/resultat/resultat.component';
       { path: 'choix', component: ChoixComponent },
       { path: 'play', component: PlayComponent },
       { path: 'resultat', component: ResultatComponent },
+      { path: 'mot-de-passe-setting', component: MotDePasseSettingComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -48,11 +50,6 @@ import { ResultatComponent } from 'app/resultat/resultat.component';
         path: 'infos-abonne',
         data: { pageTitle: 'play2WinApp.infosAbonne.home.title' },
         loadChildren: () => import('./infos-abonne/infos-abonne.module').then(m => m.InfosAbonneModule),
-      },
-      {
-        path: 'mot-de-passe-setting',
-        data: { pageTitle: 'play2WinApp.motDePasseSetting.home.title' },
-        loadChildren: () => import('./mot-de-passe-setting/mot-de-passe-setting.module').then(m => m.MotDePasseSettingModule),
       },
       {
         path: 'reponse',

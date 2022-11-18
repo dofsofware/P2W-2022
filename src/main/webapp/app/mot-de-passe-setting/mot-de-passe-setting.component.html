@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row" style="margin: 0px; padding: 0px">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="text-muted mt-5 mb-5">Modifier mon mot de passe</h2>
+
+      <div class="alert alert-success" *ngIf="success" jhiTranslate="password.messages.success">
+        <strong>Password changed!</strong>
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show consigne" *ngIf="error">
+        <strong>Erreur!</strong> Actuel mot de passe incorrect.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show consigne" *ngIf="doNotMatch">
+        <strong>Erreur!</strong> Mots de passe non sumilaires.
+      </div>
+
+      <form name="form" role="form" (ngSubmit)="changePassword()" [formGroup]="passwordForm">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <input
+              id="currentPassword"
+              type="password"
+              name="currentPassword"
+              placeholder="Actuel mot de passe"
+              class="form-control"
+              formControlName="currentPassword"
+              class="form-control bg-white border-md btn-lg pl-3"
+            />
+          </div>
+          <div
+            *ngIf="
+              passwordForm.get('currentPassword')!.invalid &&
+              (passwordForm.get('currentPassword')!.dirty || passwordForm.get('currentPassword')!.touched)
+            "
+          >
+            <div
+              class="alert alert-danger alert-dismissible fade show consigne"
+              *ngIf="passwordForm.get('currentPassword')?.errors?.required"
+            >
+              <strong>Erreur!</strong> Le mot de passe est obligatoire.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <input
+              id="newPassword"
+              type="password"
+              name="newPassword"
+              placeholder="Nouveau mot de passe"
+              class="form-control"
+              formControlName="newPassword"
+              class="form-control bg-white border-md btn-lg pl-3"
+            />
+          </div>
+          <jhi-password-strength-bar [passwordToCheck]="passwordForm.get('newPassword')!.value"></jhi-password-strength-bar>
+          <div
+            *ngIf="
+              passwordForm.get('newPassword')!.invalid &&
+              (passwordForm.get('newPassword')!.dirty || passwordForm.get('newPassword')!.touched)
+            "
+          >
+            <div class="alert alert-danger alert-dismissible fade show consigne" *ngIf="passwordForm.get('newPassword')?.errors?.required">
+              <strong>Erreur!</strong> Le mot de passe est obligatoire.
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show consigne" *ngIf="passwordForm.get('newPassword')?.errors?.minlength">
+              <strong>Erreur!</strong> Ce champ doit faire au minimum 4 caractères.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <input
+              id="confirmPassword"
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirmation mot de passe"
+              class="form-control"
+              formControlName="confirmPassword"
+              class="form-control bg-white border-md btn-lg pl-3"
+            />
+          </div>
+          <div
+            *ngIf="
+              passwordForm.get('confirmPassword')!.invalid &&
+              (passwordForm.get('confirmPassword')!.dirty || passwordForm.get('confirmPassword')!.touched)
+            "
+          >
+            <div
+              class="alert alert-danger alert-dismissible fade show consigne"
+              *ngIf="passwordForm.get('confirmPassword')?.errors?.required"
+            >
+              <strong>Erreur!</strong> Le mot de passe est obligatoire.
+            </div>
+            <div
+              class="alert alert-danger alert-dismissible fade show consigne"
+              *ngIf="passwordForm.get('confirmPassword')?.errors?.minlength"
+            >
+              <strong>Erreur!</strong> Ce champ doit faire au minimum 4 caractères.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12 mx-auto mb-0 bounceInfini bounce-2">
+          <button [disabled]="passwordForm.invalid && !isChanging" type="submit" class="btn btn-primary btn-block py-2">
+            <span class="font-weight-bold">Enregistrer les changements</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

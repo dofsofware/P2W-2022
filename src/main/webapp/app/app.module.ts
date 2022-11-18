@@ -1,4 +1,4 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import locale from '@angular/common/locales/fr';
@@ -35,6 +35,7 @@ import { PrincipesComponent } from './principes/principes.component';
 import { ChoixComponent } from './choix/choix.component';
 import { PlayComponent } from './play/play.component';
 import { ResultatComponent } from './resultat/resultat.component';
+import { MotDePasseSettingComponent } from './mot-de-passe-setting/mot-de-passe-setting.component';
 
 @NgModule({
   imports: [
@@ -72,8 +73,10 @@ import { ResultatComponent } from './resultat/resultat.component';
     ChoixComponent,
     PlayComponent,
     ResultatComponent,
+    MotDePasseSettingComponent,
   ],
   bootstrap: [MainComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
   constructor(applicationConfigService: ApplicationConfigService, iconLibrary: FaIconLibrary, dpConfig: NgbDatepickerConfig) {

@@ -21,7 +21,6 @@
     <include file="config/liquibase/changelog/20221103162621_added_entity_Recette.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051246_added_entity_Choix.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051247_added_entity_InfosAbonne.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20221105051249_added_entity_MotDePasseSetting.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051254_added_entity_Reponse.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20221105051255_added_entity_Restaure.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
