@@ -11,6 +11,8 @@ import { ChoixComponent } from 'app/choix/choix.component';
 import { PlayComponent } from 'app/play/play.component';
 import { ResultatComponent } from 'app/resultat/resultat.component';
 import { MotDePasseSettingComponent } from 'app/mot-de-passe-setting/mot-de-passe-setting.component';
+import { InfosAbonneComponent } from 'app/infos-abonne/infos-abonne.component';
+import { RestaureComponent } from 'app/restaure/restaure.component';
 
 @NgModule({
   imports: [
@@ -31,6 +33,8 @@ import { MotDePasseSettingComponent } from 'app/mot-de-passe-setting/mot-de-pass
       { path: 'play', component: PlayComponent },
       { path: 'resultat', component: ResultatComponent },
       { path: 'mot-de-passe-setting', component: MotDePasseSettingComponent },
+      { path: 'infos-abonne', component: InfosAbonneComponent },
+      { path: 'restaure', component: RestaureComponent },
       {
         path: 'gains',
         data: { pageTitle: 'play2WinApp.gains.home.title' },
@@ -47,19 +51,9 @@ import { MotDePasseSettingComponent } from 'app/mot-de-passe-setting/mot-de-pass
         loadChildren: () => import('./recette/recette.module').then(m => m.RecetteModule),
       },
       {
-        path: 'infos-abonne',
-        data: { pageTitle: 'play2WinApp.infosAbonne.home.title' },
-        loadChildren: () => import('./infos-abonne/infos-abonne.module').then(m => m.InfosAbonneModule),
-      },
-      {
         path: 'reponse',
         data: { pageTitle: 'play2WinApp.reponse.home.title' },
         loadChildren: () => import('./reponse/reponse.module').then(m => m.ReponseModule),
-      },
-      {
-        path: 'restaure',
-        data: { pageTitle: 'play2WinApp.restaure.home.title' },
-        loadChildren: () => import('./restaure/restaure.module').then(m => m.RestaureModule),
       },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),

@@ -1,6 +1,6 @@
 let isSubscribed = false;
 let swRegistration = null;
-let applicationKey = 'BC3nw-aB9DIs4A823ASQp8MN5dqgLYK0zOcZOq7ltbhmzhJ91XYWwrAUJAztuOiSrM3Xhnh4ZgqPrzxG4ZYqv3A';
+let applicationKey = 'BLJUUf6htVAe6C0nZSmlfY5Mu8jye83-hMdnO0W9YVEqxklyjQVJB1I2K_MewobRv8HxFvcF7JWFQ5TRLOLq-Qc';
 
 // Url Encription
 function urlB64ToUint8Array(base64String) {

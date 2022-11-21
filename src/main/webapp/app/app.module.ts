@@ -36,6 +36,8 @@ import { ChoixComponent } from './choix/choix.component';
 import { PlayComponent } from './play/play.component';
 import { ResultatComponent } from './resultat/resultat.component';
 import { MotDePasseSettingComponent } from './mot-de-passe-setting/mot-de-passe-setting.component';
+import { InfosAbonneComponent } from './infos-abonne/infos-abonne.component';
+import { RestaureComponent } from './restaure/restaure.component';
 
 @NgModule({
   imports: [
@@ -74,6 +76,8 @@ import { MotDePasseSettingComponent } from './mot-de-passe-setting/mot-de-passe-
     PlayComponent,
     ResultatComponent,
     MotDePasseSettingComponent,
+    InfosAbonneComponent,
+    RestaureComponent,
   ],
   bootstrap: [MainComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
